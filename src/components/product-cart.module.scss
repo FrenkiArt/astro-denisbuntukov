@@ -1,0 +1,36 @@
+.cart {
+  border: 1px solid green;
+  padding: 10px;
+  height: 100%;
+
+  // .cart__title
+  &__title {
+    font-size: 1rem;
+    font-weight: bold;
+    min-height: 6rem;
+  }
+
+  // .cart__descr
+  &__descr {
+    font-size: 12px;
+  }
+
+  // .cart__btn
+  &__btn {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.07);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // .cart__img
+  &__img {
+    max-width: 100%;
+    width: 180px;
+  }
+}

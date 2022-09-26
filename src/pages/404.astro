@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/PageTemplate.astro";
+const pageUrl = Astro.url.pathname.replace(/\/$/, "");
+---
+
+<Layout pageTitle="404 Страница не найдена">
+  <h2>{pageUrl} страницы не найдено</h2>
+  <br />
+  <p>
+    <a href="/">Вернуться на главную страницу.</a>
+  </p>
+</Layout>
