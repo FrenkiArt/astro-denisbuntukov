@@ -4,13 +4,86 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import Layout from "../layouts/PageTemplate.astro";
+/* import "antd/dist/antd.css"; */
+import { Col, Row } from "antd";
 ---
+
+<script>
+  import React from "react";
+  import ReactDOM from "react-dom";
+  import * as ReactDOMClient from "react-dom/client";
+  import MySelect from "../components/MySelect";
+  import MySelect2 from "../components/MySelect";
+  import "antd/dist/antd.css";
+  const domContainer = document.querySelector("#myselect");
+  const domContainer2 = document.querySelector("#myselect2");
+  const root = ReactDOMClient.createRoot(domContainer);
+  const root2 = ReactDOMClient.createRoot(domContainer2);
+  root.render(React.createElement(MySelect));
+  root2.render(React.createElement(MySelect2));
+</script>
+
+<style lang="scss" global>
+  .ant-row {
+    background-color: pink;
+  }
+  .ant-col {
+    background-color: green;
+    padding: 0 8px;
+  }
+
+  .inner-box {
+    background: #0092ff;
+    padding: 8px 0;
+  }
+</style>
 
 <Layout pageTitle="Главная страница">
   <div class="page">
     <Header title={SITE_TITLE} pageTitle="Главная страница" />
 
     <main>
+      Ниже Селект, пример использования со сторонней библиотекой
+      <div id="myselect"></div>
+      <div id="myselect2"></div>
+
+      <Row gutter={16}>
+        <Col span={24}>col-24</Col>
+      </Row>
+      <Row gutter={16}>
+        <Col className="gutter-row" span={12}
+          ><div class="inner-box">col-12</div>
+        </Col>
+        <Col className="gutter-row" span={12}
+          ><div class="inner-box">col-12</div>
+        </Col>
+        <Col className="gutter-row" span={6}
+          ><div class="inner-box">col-6</div>
+        </Col>
+        <Col className="gutter-row" span={6}
+          ><div class="inner-box">col-6</div>
+        </Col>
+        <Col className="gutter-row" span={6}
+          ><div class="inner-box">col-6</div>
+        </Col>
+        <Col className="gutter-row" span={6}
+          ><div class="inner-box">col-6</div>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={8}>col-8</Col>
+        <Col span={8}>col-8</Col>
+        <Col span={8}>col-8</Col>
+      </Row>
+      <Row>
+        <Col span={6}>col-6</Col>
+        <Col span={6}>col-6</Col>
+        <Col span={6}>col-6</Col>
+        <Col span={6}>col-6</Col>
+      </Row>
+
+      <br />
+
       <h1>🧑‍🚀 Hello, Astronaut! обновлённый</h1>
       <p>
         Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
